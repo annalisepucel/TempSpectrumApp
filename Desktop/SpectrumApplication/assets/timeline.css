@@ -1,0 +1,90 @@
+div.flexContainer {
+  background-color: #1e1e1e;
+}
+
+.flexContainer {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  flex-direction: row;
+}
+
+.flexTimeline {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  border-top: 2px solid #fff;
+  margin-top: 0px;
+  flex-direction: column;
+  align-items: stretch;
+  -webkit-flex-flow: row wrap;
+  -webkit-align-items: stretch;
+}
+
+.timelineItem {
+  color: #ffffff;
+  font-size: 16px;
+  margin: auto;
+}
+
+.timelineItem:before {
+  /*border-left:2px solid #ffffff;*/
+  margin-left: 0px;
+  text-align: center;
+  content: "|";
+}
+
+.timelineItem:after {
+  /*border-left:2px solid #ffffff;*/
+  margin-left: 0px;
+  text-align: center;
+  content: "|";
+}
+
+.graphItem {
+  background-color: #f9f9f9;
+  min-height: 10px;
+  margin-bottom: 10px;
+}
+
+.pink {
+  width: 0%;
+  margin-left: 50%;
+  margin-right: 50%;
+  background-color: deeppink;
+}
+
+.yellow {
+  width: 0%;
+  margin-left: 50%;
+  margin-right: 50%;
+  background-color: gold;
+}
+
+.blue {
+  width: 0%;
+  margin-left: 50%;
+  margin-right: 50%;
+  background-color: royalblue;
+}
+
+.green {
+  width: 0%;
+  margin-left: 50%;
+  margin-right: 50%;
+  background-color: greenyellow;
+}
+
+.red {
+  width: 0%;
+  margin-left: 50%;
+  margin-right: 50%;
+  background-color: orangered;
+}
+

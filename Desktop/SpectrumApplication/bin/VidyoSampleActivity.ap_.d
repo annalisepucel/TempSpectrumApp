@@ -1,0 +1,24 @@
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/bin/VidyoSampleActivity.ap_ \
+ : /Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/drawable/green_button.xml \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/drawable-hdpi/ic_launcher.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/drawable-hdpi/vidyo.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/drawable-hdpi/vidyologo.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/drawable-ldpi/ic_launcher.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/drawable-mdpi/ic_launcher.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/drawable-mdpi/icon_back_camera.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/drawable-mdpi/icon_front_camera.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/layout/conference.xml \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/layout/custom_dialog.xml \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/layout/joinconference.xml \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/layout/main.xml \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/raw/ca_certificates.crt \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/values/colors.xml \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/res/values/strings.xml \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/bin/res/drawable-hdpi/ic_launcher.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/bin/res/drawable-hdpi/vidyo.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/bin/res/drawable-hdpi/vidyologo.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/bin/res/drawable-ldpi/ic_launcher.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/bin/res/drawable-mdpi/ic_launcher.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/bin/res/drawable-mdpi/icon_back_camera.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/bin/res/drawable-mdpi/icon_front_camera.png \
+/Users/vnaik/Desktop/Android3.3.1/VidyoSampleAndroid_3.3.1.0005/bin/AndroidManifest.xml \

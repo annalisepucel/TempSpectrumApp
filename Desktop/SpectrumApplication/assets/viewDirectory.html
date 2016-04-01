@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spectrum Health</title>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="UpdateController.js"></script>
+  <script src="PatientsService.js"></script>
+
+</head>
+
+<script type="text/javascript">
+  function run() {
+    document.getElementById("patientName").innerHTML = document.getElementById("directory").options[document.getElementById("directory").selectedIndex].text;
+    if (document.getElementById("directory").options[document.getElementById("directory").selectedIndex].text) {
+      document.getElementById("phoneLink").href = "Vidyo/PatientID/" + document.getElementById("directory").selectedIndex;
+      document.getElementById("careplanLink").href = "/timeline/timeline.html?id=" + document.getElementById("directory")[document.getElementById("directory").selectedIndex].value;
+      document.getElementById("phoneImg").style.visibility = "visible";
+      document.getElementById("careplanImg").style.visibility = "visible";
+      document.getElementById("patientId").innerHTML = "Patient Id: " + document.getElementById("directory")[document.getElementById("directory").selectedIndex].value;
+      document.getElementById("roomNumber").innerHTML = "Room Number: 503";
+
+    }
+  }
+</script>
+
+<body ng-app="myApp">
+  <div ng-include src="'../header.html'"></div>
+
+
+
+  <div class="directory-container" ng-controller="UpdateController">
+    <form class="directory-form">
+      <select size="13" id="directory" name="directory" onchange="run()" >
+        <option ng-repeat="patient in patients" value="{{patient.patient_id}}">{{patient.first_name}} {{patient.last_name}}</option>
+      </select>
+    </form>
+    <div class="selected-name">
+      <a id="phoneLink"><img id="phoneImg" class="phoneImg" src="../images/phoneicon.png" width="75px" height="75px" /></a><a id="careplanLink"><img id="careplanImg" class ="phoneImg" src="../images/careplanbutton.png" width="145px" height="70px" /></a><h3></h3>
+      <h3 id="patientId"></h3><h3 id="patientName"></h3><h3 id="roomNumber"></h3>
+    </div>
+  </div>
+
+
+</body>
+</html>

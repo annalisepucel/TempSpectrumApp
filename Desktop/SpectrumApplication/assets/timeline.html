@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--#include file="header.html"-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="timeline.css">
+  <script src="jquery-1.7.1.min.js"></script>
+
+  <script src="angular.min.js"></script>
+    <script src="timeline.js"></script>
+  <script src="UpdateController.js"></script>
+  <script src="PatientsService.js"></script>
+
+</head>
+
+
+<body ng-app="myApp">
+<div ng-include src="'../header.html'"></div>
+<p id="test"></p>
+
+<div ng-controller="UpdateController" class="container">
+
+
+<div id="test2" ng-repeat="patient in patients" ng-if="patient.patient_id == currentId1">
+    <div class="row">
+      <div class="col-md-3">
+        <h2>{{patient.first_name}} {{patient.last_name}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Patient ID: {{patient.patient_id}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Arrival: {{patient.arrival}}</p>
+      </div>
+      <div class="col-md-3">
+        <p>Estimated Depature: {{patient.departure}}</p>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+<div class="flexContainer">
+
+  <div Id = "pinkbar" class="graphItem pink" ></div>
+
+  <div Id = "yellowbar"class="graphItem yellow"></div>
+  <div Id = "bluebar"class="graphItem blue"></div>
+  <div Id = "greenbar"class="graphItem green"></div>
+  <div Id = "redbar"class="graphItem red"></div>
+
+  <div class="flexTimeline">
+
+  </div>
+</div>
+</body>
+</html>

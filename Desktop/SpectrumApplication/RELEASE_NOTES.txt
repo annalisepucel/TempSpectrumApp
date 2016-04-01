@@ -1,0 +1,114 @@
+Client API for Android Version: 3.3.1.0005
+Android Version 4.2.2
+SDK Level: 17
+Minimum SDK Level 10 (2.3.3)
+NDK Version : 8
+
+Changes in sample:
+**Architecture has been reverted back to the 2.1 architecture (allowing calling VC Client API within self-defined JNI function calls
+**Resolves crash issue upon receiving remote shares via some code changes as well:
+
+Step#1:
+
+And following JNI call in ndkVidyoSample.c file:
+
+JNIEXPORT void JNICALL Java_com_vidyo_vidyosample_VidyoSampleApplication_DisableShareEvents(JNIEnv *env, jobject javaThisj)
+{
+FUNCTION_ENTRY
+VidyoClientSendEvent (VIDYO_CLIENT_IN_EVENT_DISABLE_SHARE_EVENTS, 0, 0);
+LOGI("Disable Shares Called - Vimal");
+FUNCTION_EXIT;
+}
+
+Step#2:
+
+Call this DisableShareEvents function call in the Java layer:
+
+In VidyoSampleActivity.java file (added Java call):
+ 
+  @Override
+    publicvoid onCreate(Bundle savedInstanceState) {
+         Log.d(TAG, "entering onCreate");
+        super.onCreate(savedInstanceState);
+              this.requestWindowFeature(Window.FEATURE_NO_TITLE); // disable title bar for dialog
+ 
+        setContentView(R.layout.main);
+ 
+              message_handler = new Handler() {
+                     publicvoid handleMessage(Message msg) {
+                           Bundle b = msg.getData();
+                           switch (msg.what) {
+                           caseCALL_STARTED:
+                                  app.StartConferenceMedia();
+                                  app.SetPreviewModeON(true);
+                                  app.SetCameraDevice(usedCamera);
+                                  app.DisableShareEvents();
+ 
+                                  startDevices();
+                                  break;
+
+Step#3:
+
+Create the native call declaration in Java layer:
+
+In VidyoSampleApplication.java file (added native declaration):
+ 
+       publicnativevoid SetEchoCancellation (boolean aecenable);
+       publicnativevoid SetSpeakerVolume (int volume);
+       public native void DisableShareEvents();
+
+Step#4:
+
+Comment out following code in ndkVidyoSample.c file in SampleGuiOnOutEvent() function call:
+
+    /*else if(event == VIDYO_CLIENT_OUT_EVENT_ADD_SHARE)
+    {
+        VidyoClientRequestWindowShares shareRequest;
+        VidyoUint result;
+
+        LOGI("VIDYO_CLIENT_OUT_EVENT_ADD_SHARE\n");
+        memset(&shareRequest, 0, sizeof(shareRequest));
+        shareRequest.requestType = LIST_SHARING_WINDOWS;
+         VidyoClientSendRequest(VIDYO_CLIENT_REQUEST_GET_WINDOW_SHARES,
+                                              &shareRequest,
+                                              sizeof(shareRequest));
+        if (result != VIDYO_CLIENT_ERROR_OK)
+        {
+            LOGE("VIDYO_CLIENT_REQUEST_GET_WINDOW_SHARES failed");
+        }
+        else
+        {
+            LOGI("VIDYO_CLIENT_REQUEST_GET_WINDOW_SHARES success:%d, %d", shareRequest.shareList.numApp, shareRequest.shareList.currApp);
+
+            shareRequest.shareList.newApp = shareRequest.shareList.currApp = 1;
+            shareRequest.requestType = ADD_SHARING_WINDOW;
+    
+            result = VidyoClientSendRequest(VIDYO_CLIENT_REQUEST_SET_WINDOW_SHARES,
+                                              &shareRequest,
+                                              sizeof(shareRequest));
+
+            if (result != VIDYO_CLIENT_ERROR_OK)
+            {
+                LOGE("VIDYO_CLIENT_REQUEST_SET_WINDOW_SHARES failed\n");
+
+            }
+            else
+            {
+                LOGI("VIDYO_CLIENT_REQUEST_SET_WINDOW_SHARES success\n");
+            }
+        }
+	}*/
+
+Fixes and improvements in Client API 3.3.1.0005 for Android:
+**Allowing access to define JNI function calls and call C based VC Client API directly within them.
+**Resolves crash issue upon receiving remote shares.
+
+NOTE:  Use build procedure as:
+
+Android Build Procedure
+
+In Eclipse clean the project.
+In shell, run “rm -rf ./obj/local/armeabi-v7a/objs/ndkVidyoSample/ndkVidyoSample.o”
+In shell run ./jni/build-client.sh
+In Eclipse build project.
+Run as Android Application.
